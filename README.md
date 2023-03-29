@@ -15,3 +15,15 @@ or start the project
     npm run dev
 
 and browse to http://localhost:3000/
+
+# To fix the issue 
+
+Checkout branch *patch-fix* for pre-fixed version.
+
+Perform the following steps in your local project:
+
+    npm install --save-dev patch-package
+
+Remove the 'if' block from [packages/next-auth/src/next/index.ts#L121-L139](https://github.com/nextauthjs/next-auth/blob/40261834111156b0df1318f5a9d8bd652387ff7f/packages/next-auth/src/next/index.ts#L121-L126) leaving just the 'else' lines [packages/next-auth/src/next/index.ts#L136-L138](https://github.com/nextauthjs/next-auth/blob/40261834111156b0df1318f5a9d8bd652387ff7f/packages/next-auth/src/next/index.ts#L136-L138).
+
+    npx patch-package next-auth
